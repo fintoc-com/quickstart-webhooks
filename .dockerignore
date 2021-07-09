@@ -1,0 +1,14 @@
+# Exclude: everything
+*
+
+# Include: application files
+!migrations
+!app.py
+!config.py
+!events.py
+
+# Include: build files
+!requirements.txt
+
+# Include: misc stuff
+!entrypoint.sh
