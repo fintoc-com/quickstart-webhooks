@@ -80,4 +80,6 @@ Finally, run the database migrations:
 heroku run -a <app-name> flask db upgrade
 ```
 
+Remember to add a secret key on the Heroku environment, using the `SQLALCHEMY_SECRET_KEY` key.
+
 You should now be able to use `<app-name>.herokuapp.com/webhook` as the Webhook Endpoint from the [Fintoc Webhooks Dashboard](https://app.fintoc.com/webhooks)!
