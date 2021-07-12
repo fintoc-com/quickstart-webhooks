@@ -46,9 +46,11 @@ migrate = Migrate(app, db)
 
 
 from events import Event
+from middleware import verify_signature
 
 
 @app.route("/webhook", methods=["POST"])
+@verify_signature
 def webhook():
     """Receives the Fintoc webhooks."""
     try:
