@@ -48,7 +48,7 @@ This quickstart repository comes with signature validation built-in! By default,
 
 The problem about signature validation on the local server, is that you need the server to be running in order to create a Webhook Endpoint (because you need to know the `ngrok` URL), which will give you the webhook secret you need to validate signatures, but in order to add that webhook secret to the environment using Docker, you would need to stop the server and re-start it, passing the new environmental variable to the container, which would change the URL that `ngrok` uses to expose the server to the world. You can see why testing this locally can be a bit of a challenge. To avoid having to deal with this stuff, you can change the line `13` of the `middleware.py` file (while the server is running, after creating the Webhook Endpoint on Fintoc) in order to make the variable named `WEBHOOK_SECRET` be assigned directly to the webhook secret, and not through an environmental variable:
 
-```git
+```diff
 - WEBHOOK_SECRET = os.environ.get("WEBHOOK_SECRET")
 + WEBHOOK_SECRET = "whsec_live_kY8cxHAHSD9WvzUf7Z7Ky-yx"
 ```
