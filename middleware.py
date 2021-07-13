@@ -33,7 +33,7 @@ def verify_signature(function):
         message = (
             "{}.{}".format(
                 timestamp,
-                json.dumps(request.get_json(), separators=(",", ":")),
+                request.get_data().decode("utf-8"),
             )
         )
         encoded_secret = WEBHOOK_SECRET.encode('utf-8')
